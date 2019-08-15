@@ -1,11 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const autoincrementId = require('../models/counterModel');
 
 const categoriaSchema = new Schema({
-  iIdCategoria: Number,
-  cNombre: String
+  iIdCategoria: {type:Number, unique: true, min: 1},
+  cNombre: {type:String}
     });
+
+categoriaSchema.pre('save', function(next){
+if(!this.isNew){
+  next(); 
+  return;
+  }
+autoincrementId('Categoria', this, next);
+});
 
 const Categoria = mongoose.model('Categoria', categoriaSchema);
 
