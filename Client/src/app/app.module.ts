@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ListThingsComponent } from './components/list-things/list-things.component';
-import { ListResultsComponent } from './components/list-results/list-results.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { ListThingsComponent } from './components/busqueda/list-things/list-things.component';
+import { ListResultsComponent } from './components/busqueda/list-results/list-results.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
+import { EmpresaComponent } from './components/empresa/empresa.component';
+import { HomeComponent } from './home/home.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { ListResultsComponent } from './components/list-results/list-results.com
     LoginComponent,
     FooterComponent,
     ListThingsComponent,
-    ListResultsComponent
+    ListResultsComponent,
+    EmpresaComponent,
+    HomeComponent,
+    BusquedaComponent,
+    ProductoComponent
 
   ],
   imports: [

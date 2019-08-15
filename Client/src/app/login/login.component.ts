@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   authenticateUser(form) {
     console.log(form.value.email);
     if(form.value.email == "prueba@hotmail.com" && form.value.password == "1234")
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/Home'])
     else
     { 
       this.isShown = true;       

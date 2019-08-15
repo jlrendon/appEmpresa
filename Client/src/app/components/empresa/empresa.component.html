@@ -1,0 +1,46 @@
+
+<form class="text-center border border-light p-5" action="#!">
+
+  <p class="h4 mb-4">Registrar empresa</p>
+
+  <!-- Nombre -->
+  <input type="text" id="name" class="form-control mb-4" placeholder="Nombre del negocio">
+
+  <!-- Direccion -->
+  <input type="direccion" id="direccion" class="form-control mb-4" placeholder="Direccion">
+
+  <!-- Colonia -->
+  <label>Colonia</label>
+  <select class="browser-default custom-select mb-4">
+      <option value="" disabled>Elige una opcion</option>
+      <option value="1" selected>Heroes</option>
+      <option value="2">Brisas</option>
+      <option value="3">Col. Mexico</option>
+      <option value="4">Centro</option>
+  </select>
+
+  <!-- Categoria -->
+  <label>Categoría</label>
+  <select class="browser-default custom-select mb-4">
+      <option value="" disabled>Elige una opcion</option>
+      <option value="1" selected>Tlapalería</option>
+      <option value="2">Papelería</option>
+      <option value="3">Supermercado</option>
+      <option value="4">Abarrotes</option>
+  </select>
+
+  <label>Select which Framework you have knowledge</label>
+  <select id="framework" name="framework[]" multiple class="form-control" >
+   <option value="Codeigniter">Codeigniter</option>
+   <option value="CakePHP">CakePHP</option>
+   <option value="Laravel">Laravel</option>
+   <option value="YII">YII</option>
+   <option value="Zend">Zend</option>
+   <option value="Symfony">Symfony</option>
+   <option value="Phalcon">Phalcon</option>
+   <option value="Slim">Slim</option>
+  </select>
+
+  <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
