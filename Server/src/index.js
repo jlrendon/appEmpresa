@@ -5,6 +5,7 @@ const conexion = require('./libs/conecction');
 const { register, getall } = require('./controllers/categoria');
 const { registercol, getallcol } = require('./controllers/colonia');
 const { registerprod, getallprod } = require('./controllers/producto');
+const { registeremp} = require('./controllers/empresa');
 const cors = require('cors');
 
 app.use(cors());
@@ -24,6 +25,8 @@ app.post('/new/colonia', registercol);
 
 app.get('/getAllProducto', getallprod);
 app.post('/new/producto', registerprod);
+
+app.post('/new/Empresa', registeremp);
 
 app.listen(3000, () => {
     console.log(`INICIANDO SERVER DE DEVf`)

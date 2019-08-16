@@ -11,7 +11,7 @@ export class ColoniaService {
     all: 'getallColonia'
   }
   constructor(private _http:HttpClient) { 
-
+    
   }
 
   getColonias(){

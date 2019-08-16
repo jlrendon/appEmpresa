@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class CategoriaService {
 
   EndPoints:any = {
-    all: 'getallColonia'
+    all: 'getAllCategoria'
   }
   constructor(private _http:HttpClient) { }
 
