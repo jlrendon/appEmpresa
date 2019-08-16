@@ -7,16 +7,17 @@ const conexion = require('./libs/conecction');
 const { register, getall } = require('./controllers/categoria');
 const { registercol, getallcol } = require('./controllers/colonia');
 const { registerprod, getallprod } = require('./controllers/producto');
-const { registeremp} = require('./controllers/empresa');
+const { registeremp } = require('./controllers/empresa');
 const cors = require('cors');
 
- app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send(`<h1>SERVER</h1>`);
-    }) 
+})
 
 app.get('/getAllCategoria', getall);
 app.post('/new/categoria', register);
