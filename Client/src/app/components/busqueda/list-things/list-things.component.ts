@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoService } from 'src/app/service/producto.service';
+import { ProductoService } from 'src/app/services/producto.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ListadeseadoService } from 'src/app/service/listadeseado.service';
+import { ListadeseadoService } from 'src/app/services/listadeseado.service';
 import { IAddProducto } from 'src/app/interfaces/iadd-producto';
 
 @Component({
@@ -24,7 +24,6 @@ export class ListThingsComponent implements OnInit {
   ngOnInit() {
     this.getProductos();
     this.ListaProducto  = this._srvListaProducto.getLista();
-    console.log(this.ListaProducto);
   }
 
   getProductos(){
@@ -45,11 +44,13 @@ export class ListThingsComponent implements OnInit {
 
   delProducto(id:number){
     /** Función para eliminar un producto de la lista de Productos */
+    console.log('Eliminar');
     this._srvListaProducto.deleteProducto(id);
   }
 
   search(){
-    /** Función para buscar las empresas que tengan disponibilidad de los productos que se desean  
+    /** Función para buscar las empresas que tengan disponibilidad de 
+        los productos que se desean  
     */
     console.log('Busqueda de empresas');
   }

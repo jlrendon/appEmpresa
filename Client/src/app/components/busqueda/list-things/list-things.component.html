@@ -1,18 +1,18 @@
 <div class="bg-faded mb-3">
     <h5 class="card-header">Lista de Productos</h5>
     <div class="card-body">
-        <form class="text-center border border-light" (ngSubmit)="addProducto(Producto)" #Producto="ngForm">
+        <form class="text-center border border-light" (ngSubmit)="addProducto(Producto)" #Producto="ngForm" ngNativeValidate>
             <!-- Categoria -->
-            <select class="browser-default custom-select mb-4" [(ngModel)]="producto" name="producto">
+            <select class="browser-default custom-select mb-4" [(ngModel)]="producto" name="producto" required >
                 <option value="" disabled>Elige un producto</option>
                 <option *ngFor="let item of Productos" value="{{item.id}}">{{item.nombre}}</option>
             </select>
             <!-- Cantidad -->
             <div class="form-inline">
-                <input type="text" [(ngModel)]="cantidad" name="cantidad"
+                <input type="text" [(ngModel)]="cantidad" name="cantidad" required
                     class="form-control mr-3 col-sm-5" placeholder="Cantidad">
                 <button class="btn btn-info btn-block col-sm-2 mr-2" type="submit"><i class="fas fa-plus"></i></button>
-                <button class="btn btn-info btn-block col-sm-2 mt-0" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-info btn-block col-sm-2 mt-0" type="button" (click)="search()"><i class="fas fa-search"></i></button>
             </div>
         </form>
     </div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ColoniaService } from 'src/app/service/colonia.service';
-import { CategoriaService } from 'src/app/service/categoria.service';
+import { ColoniaService } from 'src/app/services/colonia.service';
+import { CategoriaService } from 'src/app/services/categoria.service';
 import { IAddProducto } from 'src/app/interfaces/iadd-producto';
-import { EmpresaService } from 'src/app/service/empresa.service';
+import { EmpresaService } from 'src/app/services/empresa.service';
 
 @Component({
   selector: 'app-empresa',

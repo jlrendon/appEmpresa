@@ -1,31 +1,32 @@
 <html>
 
 <head>
-<!-- CSS -->
- <!-- Compiled and minified CSS -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- CSS -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
- <!-- Compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- 
-  <style type="text/css"> 
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
-  main {
-    flex: 1 0 auto;
-  }
+  <style type="text/css">
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
 
-  body {
-    background: #e3f2fd ;
-  }
+    main {
+      flex: 1 0 auto;
+    }
 
-</style>
+    body {
+      background: #e3f2fd;
+    }
+  </style>
 </head>
 
 <body ng-app="FireCart" ng-controller="AuthController">
@@ -33,100 +34,66 @@
   <main>
     <!--Logueo-->
     <div class="row center">
-        <!--Logo-->
-        <div class="col s12 center-align center" style="margin-top: 1%">
-          <img src="https://img.icons8.com/clouds/100/000000/worldwide-location.png" alt="App Logo" class="responsive-img z-depth-3"
-          style="width:100px ; height :100px; border-radius:50px"/>
-        </div>
-        <div class="col s12 m10 offset-m1 l6 offset-l3">
-            <div class="card sticky-action z-depth-4 card-panel hoverable"
-                 style=" margin : 0px; padding : 2px">
+      <!--Logo-->
+      <div class="col s12 center-align center" style="margin-top: 1%">
+        <img src="https://img.icons8.com/clouds/100/000000/worldwide-location.png" alt="App Logo"
+          class="responsive-img z-depth-3" style="width:100px ; height :100px; border-radius:50px" />
+      </div>
+      <div class="col s12 m10 offset-m1 l6 offset-l3">
+        <div class="card sticky-action z-depth-4 card-panel hoverable" style=" margin : 0px; padding : 2px">
 
-                <!--Login fields-->
-                <form  (ngSubmit)="authenticateUser(form)" #form="ngForm" ngNativeValidate>
-                <div class="card-content" >
-                    <div class="row center-align">
-                        <span class="card-title grey-text text-darken-4 center-align">Ingresar</span>
+          <!--Login fields-->
+          <form (ngSubmit)="authenticateUser(form)" #form="ngForm" ngNativeValidate>
+            <div class="card-content">
+              <div class="row center-align">
+                <span class="card-title grey-text text-darken-4 center-align">Ingresar</span>
 
-                        <div class="input-field col s12">
-                        <div class="form-group">
-                            <i class="material-icons prefix center">account_circle</i>
-                            <input 
-                                    [(ngModel)]="email"
-                                    id="email"
-                                    type='email'
-                                    name='email'
-                                    class="form-control"
-                                    required="true"
-                                    placeholder=""/>
-                            <div class="activate">
-                            <label for="email"
-                                    >Captura tu email
-                            </label>
-                           </div>
-                           </div>
-                        </div>
-                        <div class="input-field col s12">
-                            <div class="form-group">
-                            <i class="material-icons prefix center">dialpad</i>
-                            <input
-                                    [(ngModel)]="password"
-                                    type='password'
-                                    name='password'
-                                    id='password'
-                                    class="form-control"
-                                    required="true"
-                                    placeholder=""/>
-                            <div class="activate">
-                            <label for="password"
-                                   class=" left-align">Captura tu password
-                            </label>
-                            </div>
-                            </div>
-                        </div>
+                <div class="input-field col s12">
+                  <div class="form-group">
+                    <i class="material-icons prefix center">account_circle</i>
+                    <input [(ngModel)]="email" id="email" type='email' name='email' class="form-control" required="true"
+                      placeholder="" />
+                    <div class="activate">
+                      <label for="email">Captura tu email
+                      </label>
                     </div>
-                  
-                    <button type="submit" class="btn btn-outline-success btn-block">Entrar</button>    
-                    <div *ngIf="isShown"  class="card-panel teal lighten-2"  id="divshow" >
-                        Usuario y/o contraseña incorrecto                      
-                      </div>                               
+                  </div>
                 </div>
-              </form>
-                <!--More actions -->
-                <div class="card-action "
-                     style=" margin : 2px; padding-bottom:0px ;padding-top : 5px">
-                    <div class="row ">
-
-                            <div class="col s6 left-align valign-wrapper">
-                                <a href="#" class="activator btn-flat white orange-text "> <i
-                                        class=" fa fa-rocket orange-text white" aria-hidden="true"></i>
-                                    Registrarse</a>
-                            </div>
-                          
-
+                <div class="input-field col s12">
+                  <div class="form-group">
+                    <i class="material-icons prefix center">dialpad</i>
+                    <input [(ngModel)]="password" type='password' name='password' id='password' class="form-control"
+                      required="true" placeholder="" />
+                    <div class="activate">
+                      <label for="password" class=" left-align">Captura tu password
+                      </label>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                
+              <button type="submit" class="btn btn-outline-success btn-block">Entrar</button>
+              <div *ngIf="isShown" class="card-panel teal lighten-2" id="divshow">
+                Usuario y/o contraseña incorrecto
+              </div>
             </div>
-        </div>
-    </div>
-</main>
-  
-    
-  
- <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- <!-- CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
- 
-<!-- JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <script src="script.js"></script>
-  <script type="text/javascript">
- 
-    
-</script>
-</body>
+          </form>
+          <!--More actions -->
+          <div class="card-action " style=" margin : 2px; padding-bottom:0px ;padding-top : 5px">
+            <div class="row ">
 
+              <div class="col s6 left-align valign-wrapper">
+                <a href="#" class="activator btn-flat white orange-text "> <i class=" fa fa-rocket orange-text white"
+                    aria-hidden="true"></i>
+                  Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
 </html>
