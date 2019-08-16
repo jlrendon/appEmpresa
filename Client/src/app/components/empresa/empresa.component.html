@@ -16,7 +16,7 @@
     <div class="form-group col-md-6">
       <!-- Categoria -->
       <label>Categoría</label>
-      <select [(ngModel)]="categoria" class="browser-default custom-select mb-4" required>
+      <select [(ngModel)]="categoria" name="categoria" class="browser-default custom-select mb-4" required>
         <option value="" disabled selected>Elige una opcion</option>
         <option *ngFor="let item of Categorias" value="{{item.id}}">{{item.nombre}}</option>
       </select>

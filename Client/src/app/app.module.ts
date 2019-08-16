@@ -12,6 +12,7 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
 import { HomeComponent } from './home/home.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { ProductoComponent } from './components/producto/producto.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductoComponent } from './components/producto/producto.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
