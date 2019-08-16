@@ -6,15 +6,8 @@ const empresaSchema = new Schema({
   iIdEmpresa: Number,
   cNombre: String,
   cDireccion: String,
-  iIdColonia:{
-    type:Number
-    /*type : Schema.Types.ObjectId,
-    ref: 'colonias'*/
-  },
-  iIdCategoria:{ type:Number
-    /*type : Schema.Types.ObjectId,
-    ref: 'catergorias'*/
-  }
+  iIdColonia:Number,
+  iIdCategoria:Number
 });
 
 empresaSchema.plugin(AutoIncrement, {inc_field:'iIdEmpresa'});

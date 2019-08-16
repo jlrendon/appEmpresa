@@ -7,11 +7,8 @@ const conexion = require('./libs/conecction');
 const { register, getall } = require('./controllers/categoria');
 const { registercol, getallcol } = require('./controllers/colonia');
 const { registerprod, getallprod } = require('./controllers/producto');
-const { registeremp, getallemp } = require('./controllers/empresa');
-
-app.listen(3000, ()=> {
-    console.log(`INICIANDO SERVER DE DEVf`)
- })
+const { registeremp} = require('./controllers/empresa');
+const cors = require('cors');
 
  app.use(bodyParser.urlencoded({ extended: false })); 
 // parse application/json
@@ -30,7 +27,8 @@ app.post('/new/colonia', registercol);
 app.get('/getAllProducto', getallprod);
 app.post('/new/producto', registerprod);
 
-app.get('/getAllEmpresa', getallemp);
-app.post('/new/empresa', registeremp);
+app.post('/new/Empresa', registeremp);
 
-module.exports = app;
+app.listen(3000, () => {
+    console.log(`INICIANDO SERVER DE DEVf`)
+})
