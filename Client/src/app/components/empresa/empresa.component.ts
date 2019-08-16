@@ -18,21 +18,14 @@ export class EmpresaComponent implements OnInit {
     private _srvEmpresa: EmpresaService) { }
 
   ngOnInit() {
-    this.getColonias();
-    this.getCategorias();
+
+    this.getInfoInicial();
   }
 
-  getColonias() {
-    /** Funcion para obtener las Colonias*/
-    this._srvColonia.getColonias().subscribe(data => {
-      this.Colonias = data;
-    });
-  }
-  getCategorias() {
-    /** Funcion para obtener las Categorias */
-    this._srvCategoria.getCategorias().subscribe(data => {
-      this.Categorias = data;
-    });
+  getInfoInicial() {
+    /** Funcion para obtener las Colonias y Categorias */
+    this.Colonias  = this._srvColonia.getColonias();
+    this.Categorias = this._srvCategoria.getCategorias();
   }
 
   guarda(Empresa){

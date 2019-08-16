@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -14,7 +12,6 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
 import { HomeComponent } from './home/home.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { ProductoComponent } from './components/producto/producto.component';
-
 
 @NgModule({
   declarations: [
@@ -34,8 +31,7 @@ import { ProductoComponent } from './components/producto/producto.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
