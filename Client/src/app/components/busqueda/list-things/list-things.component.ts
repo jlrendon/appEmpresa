@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService } from 'src/app/service/producto.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ListadeseadoService } from 'src/app/service/listadeseado.service';
+import { IAddProducto } from 'src/app/interfaces/iadd-producto';
 
 @Component({
   selector: 'app-list-things',
@@ -7,8 +11,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListThingsComponent implements OnInit {
   
-  constructor() { }
+  Productos:any;
+  ListaProducto: IAddProducto[] = [];
+  //formAddProducto: FormGroup;
+  constructor(private _srvProducto: ProductoService, private _srvListaProducto: ListadeseadoService) { 
+    /*this.formAddProducto = new FormGroup({
+       producto : new FormControl('', [Validators.required]),
+       cantidad : new FormControl('', [Validators.required, Validators.maxLength(2)]) 
+    });*/
+  }
 
   ngOnInit() {
+    this.getProductos();
+    this.ListaProducto  = this._srvListaProducto.getLista();
+    console.log(this.ListaProducto);
+  }
+
+  getProductos(){
+    this.Productos  =  this._srvProducto.getProductos();
+  }
+  
+
+  addProducto(_form:any){
+    /** Función para agregar productos a la lista de Productos */
+
+    let producto:IAddProducto = {
+      id: _form.value.producto, 
+      producto:'',    
+      cantidad: _form.value.cantidad
+    }
+    this._srvListaProducto.addProducto(producto);
+  }
+
+  delProducto(id:number){
+    /** Función para eliminar un producto de la lista de Productos */
+    this._srvListaProducto.deleteProducto(id);
+  }
+
+  search(){
+    /** Función para buscar las empresas que tengan disponibilidad de los productos que se desean  
+    */
+    console.log('Busqueda de empresas');
   }
 }

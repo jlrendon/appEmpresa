@@ -1,50 +1,27 @@
 <div class="bg-faded mb-3">
-    <h5 class="card-header">List of things</h5>
+    <h5 class="card-header">Lista de Productos</h5>
     <div class="card-body">
-        <form class="form-inline">
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Producto</label>
-                <div class="col-sm-10">
-                    <select id="inputState" class="form-control col-sm-12">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div>
+        <form class="text-center border border-light" (ngSubmit)="addProducto(Producto)" #Producto="ngForm">
+            <!-- Categoria -->
+            <select class="browser-default custom-select mb-4" [(ngModel)]="producto" name="producto">
+                <option value="" disabled>Elige un producto</option>
+                <option *ngFor="let item of Productos" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
+            <!-- Cantidad -->
+            <div class="form-inline">
+                <input type="text" [(ngModel)]="cantidad" name="cantidad"
+                    class="form-control mr-3 col-sm-5" placeholder="Cantidad">
+                <button class="btn btn-info btn-block col-sm-2 mr-2" type="submit"><i class="fas fa-plus"></i></button>
+                <button class="btn btn-info btn-block col-sm-2 mt-0" type="submit"><i class="fas fa-search"></i></button>
             </div>
-            <div class="form-group">
-                <label for="" class="col-sm-2 col-form-label">Cantidad</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
     </div>
-    <ul class="list-group">
+    <ul class="list-group" *ngFor="let item of ListaProducto">
         <li
             class="list-group-item d-flex justify-content-between align-items-center list-group-item list-group-item-action list-group-item-light">
-            Cras justo odio
-            <span class="badge badge-primary badge-pill">14</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Dapibus ac facilisis in
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
+            <span class="badge badge-primary badge-pill">{{item.cantidad}}</span>
+            <span>{{item.producto}}</span>
+            <i class="fas fa-trash-alt" (click)="delProducto(item.id)"></i>
         </li>
     </ul>
 </div>

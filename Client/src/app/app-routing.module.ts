@@ -9,7 +9,7 @@ import { ProductoComponent } from './components/producto/producto.component';
 const routes: Routes = [
   {path:'Home', component: HomeComponent, children: [
     {path: 'Empresa', component: EmpresaComponent},
-    {path: 'Producto', component: ProductoComponent}
+    {path: 'Producto', component: ProductoComponent},
     {path: 'Busqueda', component: BusquedaComponent}
   ]}, 
   {path:'login', component: LoginComponent},

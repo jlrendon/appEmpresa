@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   constructor(private _router: Router) { }
 
   ngOnInit() {
-    console.log(this._router);
     this._router.navigate(['/Home/Busqueda']);
   }
 
