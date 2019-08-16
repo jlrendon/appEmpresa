@@ -1,29 +1,35 @@
 const express = require('express');
-//const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-
 const conexion = require('./libs/conecction');
 const { register, getall } = require('./controllers/categoria');
 const { registercol, getallcol } = require('./controllers/colonia');
-const cors  = require('cors');
+const { registerprod, getallprod } = require('./controllers/producto');
+const cors = require('cors');
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send(`<h1>SERVER</h1>`);
-    }) 
+})
 
-app.get('/getall', getall);
+app.get('/getAllCategoria', getall);
 app.post('/new/categoria', register);
 
-app.get('/getallColonia', getallcol);
+app.get('/getAllColonia', getallcol);
 app.post('/new/colonia', registercol);
 
-app.listen(3000, ()=> {
+app.get('/getAllProducto', getallprod);
+app.post('/new/producto', registerprod);
+
+app.listen(3000, () => {
     console.log(`INICIANDO SERVER DE DEVf`)
- })
- 
+})
+
+
+
+
+

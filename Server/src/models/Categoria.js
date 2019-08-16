@@ -1,19 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const autoincrementId = require('../models/counterModel');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const categoriaSchema = new Schema({
-  iIdCategoria: {type:Number, unique: true, min: 1},
-  cNombre: {type:String}
+  iIdCategoria: Number,
+  cNombre: String
     });
-
-categoriaSchema.pre('save', function(next){
-if(!this.isNew){
-  next(); 
-  return;
-  }
-autoincrementId('Categoria', this, next);
-});
+categoriaSchema.plugin(AutoIncrement, { inc_field:'iIdCategoria' });
 
 const categoria = mongoose.model('Categoria', categoriaSchema);
 
