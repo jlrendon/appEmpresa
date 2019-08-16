@@ -2,10 +2,10 @@ const { categoria } = require('../models/Categoria');
 
 exports.getall = ( req, resp ) => {
     categoria.find({}, (err, respuesta)=> {
-        let lstcategoria = {};
+        let lstcategoria = [];
 
         respuesta.forEach(function(res) {
-            lstcategoria[res._id] = res;
+            lstcategoria.push({id: res.iIdCategoria, nombre: res.cNombre});
         });    
         resp.send(lstcategoria);  
       });
@@ -15,16 +15,14 @@ exports.register = (req, res) => {
 
     let param = req.body;
     let newCategoria = categoria ({
-        cNombre: param.cNombre,
-      //  iIdCategoria: param.iIdCategoria
-       /* iIdCateoria: 0*/
+        cNombre: param.cNombre
     });
 
-    newCategoria.save((err, resp) =>{
+    newCategoria.save((err, data) =>{
         if(err){
             res.status(500).json({message: 'Ocurrio un error', err});
-        }else if(resp){
-            res.status(201).json({status: 'Ok', data: resp})
+        }else if(data){
+            res.status(201).json({status: 'Ok', data: data})
         }else{
             res.status(400).json({message:'No se creo la categoria'});
         }
