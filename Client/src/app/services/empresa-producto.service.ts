@@ -15,9 +15,18 @@ export class EmpresaProductoService {
       ]
     }
   ]
-  constructor() { }
+  constructor() { 
+  }
+  
+  search(data){
+     this.lstBusqueda.push(data);
+  }
 
   getBusquedaEmpresa(){
-    this.lstBusqueda;
+    return this.lstBusqueda;
+  }
+
+  clearResult(){
+    this.lstBusqueda = [];
   }
 }

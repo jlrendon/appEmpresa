@@ -1,12 +1,22 @@
-<ul class="list-group">
-    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-        <div class="flex-column">
-            Things Fall Apart
-            <p><small>by Miguel de Cervantes</small></p>
-            <span class="badge badge-danger badge-pill"> 0 Copies in Stock</span>
-        </div>
-        <div class="image-parent">
-            <img src="https://img.icons8.com/bubbles/50/000000/google-maps.png" (click)="showMap()">
-        </div>
-    </li>
-</ul>
+<div class="bg-faded mb-3">
+    <h5 class="card-header">Resultado
+        <i class="fas fa-trash-alt float-right" (click)="clearResult()"></i>
+    </h5>
+    <div class="card-body">
+
+    </div>
+    <ul class="list-group mb-2" *ngFor="let item of Resultado">
+        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <div class="flex-column">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <p class="card-subtitle mb-2 text-muted"><small>{{item.direccion}}</small></p>
+                <span class="badge badge-success badge-pill mr-2" *ngFor="let producto of item.productos">
+                    {{producto.cantidad}} {{producto.nombre}}
+                </span>
+            </div>
+            <div class="image-parent">
+                <img src="https://img.icons8.com/bubbles/50/000000/google-maps.png" (click)="showMap()">
+            </div>
+        </li>
+    </ul>
+</div>

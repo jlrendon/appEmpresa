@@ -3,6 +3,7 @@ import { ProductoService } from 'src/app/services/producto.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ListadeseadoService } from 'src/app/services/listadeseado.service';
 import { IAddProducto } from 'src/app/interfaces/iadd-producto';
+import { EmpresaProductoService } from 'src/app/services/empresa-producto.service';
 
 @Component({
   selector: 'app-list-things',
@@ -15,7 +16,8 @@ export class ListThingsComponent implements OnInit {
   ListaProducto: IAddProducto[] = [];
   //formAddProducto: FormGroup;
   constructor(private _srvProducto: ProductoService, 
-    private _srvListaProducto: ListadeseadoService) { 
+    private _srvListaProducto: ListadeseadoService,
+    private _srvEmpresaProducto: EmpresaProductoService) { 
     /*this.formAddProducto = new FormGroup({
        producto : new FormControl('', [Validators.required]),
        cantidad : new FormControl('', [Validators.required, Validators.maxLength(2)]) 
@@ -53,6 +55,16 @@ export class ListThingsComponent implements OnInit {
     /** Función para buscar las empresas que tengan disponibilidad de 
         los productos que se desean  
     */
+
+    let data = {
+      nombre : 'COPYMEX',
+      direccion: 'Col. Centro',
+      productos: [
+        { nombre: 'Libreta', cantidad: 5, precio: '25.99'},
+        { nombre: 'Martillo', cantidad: 3, precio: '15.99'}
+      ]
+    }
+    this._srvEmpresaProducto.search(data);
     console.log('Busqueda de empresas');
   }
 }
