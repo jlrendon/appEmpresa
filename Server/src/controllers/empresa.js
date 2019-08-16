@@ -2,6 +2,7 @@ const { empresa } = require('../models/Empresa');
 
 exports.registeremp = (req, res) => {
     let param = req.body;
+    console.log(param);
     let newEmpresa = empresa ({
         cNombre : param.cNombre,
         cDireccion : param.cDireccion,
@@ -19,7 +20,6 @@ exports.registeremp = (req, res) => {
         }
     });
 }
-
 
 exports.getallemp = ( req, resp ) => {
     empresa.find({}, (err, respuesta)=> {

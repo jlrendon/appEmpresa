@@ -7,12 +7,13 @@ const empresaSchema = new Schema({
   cNombre: String,
   cDireccion: String,
   iIdColonia:{
-    type : Schema.Types.ObjectId,
-    ref: 'colonias'
+    type:Number
+    /*type : Schema.Types.ObjectId,
+    ref: 'colonias'*/
   },
-  iIdCategoria:{
-    type : Schema.Types.ObjectId,
-    ref: 'catergorias'
+  iIdCategoria:{ type:Number
+    /*type : Schema.Types.ObjectId,
+    ref: 'catergorias'*/
   }
 });
 

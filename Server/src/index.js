@@ -7,6 +7,7 @@ const conexion = require('./libs/conecction');
 const { register, getall } = require('./controllers/categoria');
 const { registercol, getallcol } = require('./controllers/colonia');
 const { registerprod, getallprod } = require('./controllers/producto');
+const { registeremp, getallemp } = require('./controllers/empresa');
 
 app.listen(3000, ()=> {
     console.log(`INICIANDO SERVER DE DEVf`)
@@ -29,5 +30,7 @@ app.post('/new/colonia', registercol);
 app.get('/getAllProducto', getallprod);
 app.post('/new/producto', registerprod);
 
+app.get('/getAllEmpresa', getallemp);
+app.post('/new/empresa', registeremp);
 
 module.exports = app;
