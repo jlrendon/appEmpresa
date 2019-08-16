@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpresaProductoService } from 'src/app/services/empresa-producto.service';
 declare var $:any;
 @Component({
   selector: 'app-list-results',
@@ -7,9 +8,16 @@ declare var $:any;
 })
 export class ListResultsComponent implements OnInit {
 
-  constructor() { }
+  Resultado:any;
+  constructor(private _srvResult: EmpresaProductoService) { }
 
   ngOnInit() {
+    this.getResultado();
+  }
+
+  getResultado (){
+    this.Resultado  =  this._srvResult.getBusquedaEmpresa();
+    console.log(this.Resultado);
   }
 
   showMap(){

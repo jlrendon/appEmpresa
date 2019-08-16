@@ -14,7 +14,8 @@ export class ListThingsComponent implements OnInit {
   Productos:any;
   ListaProducto: IAddProducto[] = [];
   //formAddProducto: FormGroup;
-  constructor(private _srvProducto: ProductoService, private _srvListaProducto: ListadeseadoService) { 
+  constructor(private _srvProducto: ProductoService, 
+    private _srvListaProducto: ListadeseadoService) { 
     /*this.formAddProducto = new FormGroup({
        producto : new FormControl('', [Validators.required]),
        cantidad : new FormControl('', [Validators.required, Validators.maxLength(2)]) 
