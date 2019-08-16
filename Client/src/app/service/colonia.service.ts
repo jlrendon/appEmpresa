@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ColoniaService {
 
-  private _lstColonias = [
-    { id: 1, nombre: 'Heroes'},
-    { id: 2, nombre: 'Brisas'},
-    { id: 3, nombre: 'Col. Méxio'},
-    { id: 4, nombre: 'Centro'},
-    { id: 5, nombre: 'Frac. Montejo' }
-  ];
-  constructor() { 
+  EndPoints:any = {
+    all: 'getallColonia'
+  }
+  constructor(private _http:HttpClient) { 
 
   }
 
   getColonias(){
-    return this._lstColonias;
+    return this._http.get(`${environment.API}${this.EndPoints.all}`);
   }
 }

@@ -6,12 +6,10 @@ const app = express();
 const conexion = require('./libs/conecction');
 const { register, getall } = require('./controllers/categoria');
 const { registercol, getallcol } = require('./controllers/colonia');
+const cors  = require('cors');
 
-app.listen(3000, ()=> {
-    console.log(`INICIANDO SERVER DE DEVf`)
- })
-
- app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false })); 
 // parse application/json
 app.use(bodyParser.json());
 
@@ -25,5 +23,7 @@ app.post('/new/categoria', register);
 app.get('/getallColonia', getallcol);
 app.post('/new/colonia', registercol);
 
-
-module.exports = app;
+app.listen(3000, ()=> {
+    console.log(`INICIANDO SERVER DE DEVf`)
+ })
+ 
