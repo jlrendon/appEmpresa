@@ -8,6 +8,6 @@ const coloniaSchema = new Schema({
   dtAlta: String
     });
 
-const Colonia = mongoose.model('Colonia', coloniaSchema);
+const colonia = mongoose.model('Colonia', coloniaSchema);
 
-module.exports = Colonia
+module.exports = { colonia }

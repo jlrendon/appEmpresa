@@ -1,13 +1,9 @@
 const mongoose = require('mongoose');
-let db;
-module.exports = function Connection(){
-    if(!db){
-       db = mongoose.connect(process.env.mongourl, '', (err)=>{
+
+ mongoose.connect('mongodb+srv://devfmicho:Ant0l0g14n0m4s33@devfmongo-qxuf1.gcp.mongodb.net/test?retryWrites=true&w=majority', 
+                  {useNewUrlParser: true}, (err)=>{
             if(!err){
                 console.log('CONEXION REALIZADA CORRECTAMENTE');
             }
-        });
-        return db;
-    }
-}
-
+        })
+       

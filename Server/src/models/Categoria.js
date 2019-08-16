@@ -15,6 +15,6 @@ if(!this.isNew){
 autoincrementId('Categoria', this, next);
 });
 
-const Categoria = mongoose.model('Categoria', categoriaSchema);
+const categoria = mongoose.model('Categoria', categoriaSchema);
 
-module.exports = Categoria
+module.exports = {categoria}
