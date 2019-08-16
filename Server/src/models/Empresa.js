@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const empresaSchema = new Schema({
   iIdEmpresa: Number,
@@ -14,8 +14,10 @@ const empresaSchema = new Schema({
     type : Schema.Types.ObjectId,
     ref: 'catergorias'
   }
-    });
+});
 
-const Empresa = mongoose.model('Empresa', empresaSchema);
+empresaSchema.plugin(AutoIncrement, {inc_field:'iIdEmpresa'});
 
-module.exports = Empresa
+const empresa = mongoose.model('Empresa', empresaSchema);
+
+module.exports = { empresa }
