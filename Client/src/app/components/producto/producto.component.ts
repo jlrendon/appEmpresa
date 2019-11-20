@@ -34,8 +34,18 @@ export class ProductoComponent implements OnInit {
     console.log(this.productos);
   }
 
-  RegisterProduct(form) {
-    console.log(form.value);
+  RegisterProduct(form) {    
+    let data = form.value;
+    let productoempresa: any = {
+      iIdEmpresa: '5d56646977a8b11558080479',
+      iIdProducto: data.idproducto,    
+      dPrecio: data.precio,
+      iDisponible: data.cantidad
+    }
+    console.log(productoempresa);
+    this.ProductoSvc.save(productoempresa).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

@@ -8,7 +8,7 @@ exports.registerrel = (req, res) => {
         iIdEmpresa : param.iIdEmpresa,
         iIdProducto : param.iIdProducto,
         dPrecio : param.dPrecio,
-        iDisponible : param.idispo
+        iDisponible : param.iDisponible
     });
    console.log(newEmpresaProducto);
    newEmpresaProducto.save((err, data) =>{
